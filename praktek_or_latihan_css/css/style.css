@@ -1,0 +1,85 @@
+p {
+  color: cyan;
+  text-align: justify;
+  font-family: calibri, Comic Sans MS, Verdana, Tahoma;
+  font-size: 12pt;
+  font-style: italic;
+}
+
+body {
+  background-color: khaki;
+  background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-attachment: fixed;
+  margin: 0 2cm;
+}
+
+hr {
+  border-width: 1px;
+  border-color: red;
+  border-style: dashed;
+}
+
+/* groupping */
+fieldset, legend {
+  border: red groove 10px;
+}
+
+legend {
+  padding: 10px;
+  background-color: white;
+  color: red;
+  font-weight: bold;
+  font-size: 14pt;
+  text-transform: uppercase;
+  font-family: ubuntu, calibri;
+  letter-spacing: 5px;
+}
+/* ----- pseudo class serta id dan class ----- */
+div#menu {
+  text-align: center;
+  font-family: ubuntu, calibri, Tahoma, jokerman;
+  text-decoration: none;
+  color: maroon;
+  padding: 1.3rem 0;
+}
+#menu > a {
+  margin: 0 1rem;
+}
+#menu > a:link, a:visited, a:active {
+  text-decoration: none;
+  color: #B8860B;
+  font-size: 14px;
+  border: 1px solid #FFFACD;
+  padding: 5px;
+  background: #FFD700;
+}
+#menu > a:hover {
+  text-decoration: none;
+  color: red;
+  font-size: 14px;
+  border: 1px solid #198e33;
+  padding: 5px;
+  background: #307838;
+}
+/*-----------------pseudo element----------------------*/
+p.p3:first-letter{
+	color: red;
+	font-size: 36pt;
+	font-weight: bold;
+	font-family: algerian,jokerman;
+	float: left;
+	padding-right: 10px;
+}
+p.p3:first-line{
+	color: green;
+	font-style: italic;
+}
+#atas, #bawah {
+  text-align: right;
+}
+h1 {
+  text-shadow: 3px #274f5a;
+  color: #26aed0;
+}
