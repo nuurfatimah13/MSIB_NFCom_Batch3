@@ -1,0 +1,51 @@
+/* header */
+.carousel-item > img {
+  height: 360px;
+}
+.carousel-caption > h5 {
+  font-style: italic;
+  font-weight: bold;
+}
+/* main content */
+.jumbotron {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+marquee {
+  color: #025902;
+  font-weight: bold;
+}
+table {
+  margin-left: 1.5rem;
+}
+.scroll {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  display: block;
+  height: 1106px;
+  overflow: scroll;
+}
+/* second aside */
+.card {
+  width: 100%;
+}
+/* footer */
+.alert {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* responsive */
+@media screen and (max-width: 645px) {
+  /* header */
+  .carousel-item > img {
+    height: 240px;
+  }
+  /* main content */
+  .main {
+    margin: 2rem 0;
+  }
+}
+  
