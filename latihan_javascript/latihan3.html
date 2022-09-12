@@ -1,0 +1,34 @@
+<script language="javascript">
+  //deklarasi dan inisialisasi variabel
+  var pelanggan = "Aya";
+  var produk = "AC";
+  //struktur kendali
+  if(produk == "TV"){
+    harsat = 3000000;
+  }else if(produk == "Kulkas"){
+    harsat = 4000000;
+  }else if(produk == "AC"){
+    harsat = 5000000;
+  }else{
+    harsat = 0;
+  }
+  let jmlBeli = 5;
+  let bruto = harsat * jmlBeli;
+  //ternary
+  /*
+  if(produk == "AC"){
+    diskon = 0.1 * bruto;
+  }else{
+    diskon = 0;
+  }
+  */
+  let diskon = (produk == "AC") ? 0.1 * bruto : 0;
+  //cetak data
+  document.write("Data pembelian" + 
+    "<br /> Pelanggan: " + pelanggan + 
+    "<br /> Produk pilihan: " + produk + 
+    "<br /> Harga satuan: " + harsat + 
+    "<br /> Harga kotor: " + bruto + 
+    "<br /> Diskon: " + diskon
+  );
+</script>
