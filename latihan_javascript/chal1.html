@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Mahasiswa</title>
+</head>
+<body>
+  <!-- Diketahui di sebuah kampung ada 100 mahasiswa, 
+    cetak daftar mahasiswa ke dalam sebuah tabel
+    dengan data: 
+    No, Nama, Alamat
+    Contoh: 
+    1 Mahasiswa Jl. Kasturi Raya No. 1
+    Di tabel untuk baris ganjil warna biru
+    Di tabel untuk baris genap warnah kuning -->
+  <h3 align="center">DAFTAR MAHASISWA</h3>
+  <table align="center" cellpadding="10" width="50%">
+    <thead>
+      <tr bgcolor="red">
+        <th>No</th>
+        <th>Mahasiswa</th>
+        <th>Alamat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        var a;
+        for(a = 1; a <= 100; a++){
+          warna = (a % 2 == 0) ? 'yellow' : 'aqua';
+          document.write(
+            `<tr bgcolor="${warna}">
+              <td>${a}</td>
+              <td>Mahasiswa ${a}</td>
+              <td>Jl. Bunga No. ${a}</td>
+            </tr>`
+            )
+        }
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>

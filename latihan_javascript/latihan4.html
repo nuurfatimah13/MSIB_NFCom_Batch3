@@ -1,0 +1,29 @@
+<script language="javascript">
+  document.write('---------- cetak angka 1 - 50 ----------');
+  var angka;
+  for(angka = 1; angka <= 50; angka++){
+    document.write('<br /> Nomer. ' + angka);
+  }
+  document.write('<br /><hr />');
+  document.write('---------- cetak angka 100 - 50 ----------');
+  var bil;
+  for(bil = 100; bil >= 50; bil--){
+    document.write('<br /> Bilangan ' + bil);
+  }
+  document.write('<br /><hr />');
+  document.write('---------- cetak bil genap 1 - 20 ----------');
+  let a;
+  for(a = 1; a <= 20; a++){
+    if(a % 2 == 0){
+      document.write('<br /> Bilangan Genap Ke ' + a);
+    }
+  }
+  document.write('<br /><hr />');
+  document.write('---------- cetak bil ganjil 1 - 10, lalu dikali 10 ----------');
+  let b;
+  for(b = 1; b <= 10; b++){
+    if(b % 2 == 1){
+      document.write(`<br /> Bilangan Ganjil Ke ${b} => ${b} × 10 = ${b * 10} `);
+    }
+  }
+</script>
