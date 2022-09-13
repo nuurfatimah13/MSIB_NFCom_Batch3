@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Pegawai</title>
+</head>
+<body>
+  <!-- 
+    Diketahui ada 100 orang pegawai dengan nama Pegawai1 s/d Pegawai100:
+    - Gunakan If multikondisi untuk tentukan jabatan:
+      * Pegawai1 s/d Pegawai25 jabatan manager 15jt
+      * Pegawai26 s/d Pegawai50 jabatan asisten manager 10jt
+      * Pegawai51 s/d Pegawai75 jabatan supervisor 7jt
+      * Pegawai76 s/d Pegawai100 jabatan staff 4jt
+    - Gunakan switch case untuk gaji pokok
+    - Dari gapok tentukan:
+      * Tunjangan jabatan = 20% dari gapok
+      * Tunjangan kesehatan = 10% dari gapok
+    - Gunakan ternary untuk tentukan agama
+      * baris ganjil muslim, warna barisnya yellow
+      * baris genap non muslim, warna barisnya blue
+    - Jika pegawai muslim dan gaji pokok minimal 7jt, ada zakat profesi sebesar 2.5% dari gaji kotornya (gunakan ternary)
+    - Take Home Pay = Gaji Kotor - Zakat Profesi
+  -->
+  <h3 align="center">DAFTAR PEGAWAI</h3>
+  <table align="center" border="1" cellpadding="10" cellspacing="0" width="95%">
+    <thead>
+      <tr bgcolor="red">
+        <th>NO</th>
+        <th>NAMA</th>
+        <th>JABATAN</th>
+        <th>AGAMA</th>
+        <th>GAJI POKOK</th>
+        <th>TUNJANGAN JABATAN</th>
+        <th>TUNJANGAN KESEHATAN</th>
+        <th>GAJI KOTOR</th>
+        <th>ZAKAT PROFESI</th>
+        <th>TAKE HOME PAY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script language="javascript">
+        var a;
+        for(a = 1; a <= 100; a++){
+          //jabatan
+          if(a >= 1 && a <= 25){
+            jabatan = 'Manager';
+          }else if(a >= 26 && a <= 50){
+            jabatan = 'Asisten Manager';
+          }else if(a >= 26 && a <= 75){
+            jabatan = 'Supervisor';
+          }else if(a >= 76 && a <= 100){
+            jabatan = 'Staff';
+          }
+          //gaji pokok
+          switch(jabatan){
+            case 'Manager': gapok = 15000000; break;
+            case 'Asisten Manager': gapok = 10000000; break;
+            case 'Supervisor': gapok = 7000000; break;
+            case 'Staff': gapok = 4000000; break;
+            default: gapok = 0; break;
+          }
+          //tunjangan jabatan
+          tujab = 0.2 * gapok;
+          //tunjangan kesehatan
+          tukes = 0.1 * gapok;
+          //gaji kotor
+          gato = gapok + tujab + tukes;
+          //agama 
+          agama = (a % 2 == 0) ? 'Muslim' : 'Non Muslim';
+          //warna
+          warna = (a % 2 == 0) ? 'yellow' : 'cyan';
+          //zakat profesi
+          zapro = (agama == 'Muslim' && gapok >= 7000000) ? 0.025 * gato : 0;
+          //take home pay 
+          thp = gato - zapro;
+          
+          document.write(
+            `<tr bgcolor="${warna}">
+              <td>${a}</td>
+              <td>Pegawai${a}</td>
+              <td>${jabatan}</td>
+              <td>${agama}</td>
+              <td>Rp. ${gapok}</td>
+              <td>Rp. ${tujab}</td>
+              <td>Rp. ${tukes}</td>
+              <td>Rp. ${gato}</td>
+              <td>Rp. ${zapro}</td>
+              <td>Rp. ${thp}</td>
+            </tr>`
+            )
+        }
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>
