@@ -2,7 +2,7 @@
   //deklarasi dan inisialisasi variabel
   var pelanggan = "Aya";
   var produk = "AC";
-  //struktur kendali
+  /*struktur kendali
   if(produk == "TV"){
     harsat = 3000000;
   }else if(produk == "Kulkas"){
@@ -12,8 +12,19 @@
   }else{
     harsat = 0;
   }
-  let jmlBeli = 5;
+  */
+  // switch case
+  let harsat = 0;
+  switch(produk){
+    case "TV": harsat = 3000000; break;
+    case "Kulkas": harsat = 4000000; break;
+    case "AC": harsat = 5000000; break;
+    default: harsat = 0; break;
+  }
+  
+  let jmlBeli = 15;
   let bruto = harsat * jmlBeli;
+  let diskon = 0;
   //ternary
   /*
   if(produk == "AC"){
@@ -21,8 +32,17 @@
   }else{
     diskon = 0;
   }
-  */
   let diskon = (produk == "AC") ? 0.1 * bruto : 0;
+  */
+  /* if multikondisi & lebih dari 1 syarat
+    diskon 30% => AC minimal jml belinya 3
+    diskon 20% => Kulkas minimal jml belinya 2
+    selain itu diskon 5%
+  */
+  if(produk == "AC" && jmlBeli >= 3) diskon = 0.3 * bruto;
+  else if(produk == "Kulkas" && jmlBeli >= 2) diskon = 0.2 * bruto;
+  else diskon = 0.05 * bruto;
+  
   //cetak data
   document.write("Data pembelian" + 
     "<br /> Pelanggan: " + pelanggan + 
