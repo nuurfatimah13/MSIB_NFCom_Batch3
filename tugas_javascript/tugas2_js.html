@@ -20,8 +20,8 @@
       * Tunjangan kesehatan = 10% dari gapok
     - Gunakan ternary untuk tentukan agama
       * baris ganjil muslim, warna barisnya yellow
-      * baris genap non muslim, warna barisnya blue
-    - Jika pegawai muslim dan gaji pokok minimal 7jt, ada zakat profesi sebesar 2.5% dari gaji kotornya (gunakan ternary)
+      * baris genap non muslim, warna barisnya cyan
+    - Jika pegawai muslim dan gaji kotor minimal 7jt, ada zakat profesi sebesar 2.5% dari gaji kotornya (gunakan ternary)
     - Take Home Pay = Gaji Kotor - Zakat Profesi
   -->
   <h3 align="center">DAFTAR PEGAWAI</h3>
@@ -73,7 +73,7 @@
           //warna
           warna = (a % 2 == 0) ? 'cyan' : 'yellow';
           //zakat profesi
-          zapro = (agama == 'Muslim' && gapok >= 7000000) ? 0.025 * gato : 0;
+          zapro = (agama == 'Muslim' && gato >= 7000000) ? 0.025 * gato : 0;
           //take home pay 
           thp = gato - zapro;
           
