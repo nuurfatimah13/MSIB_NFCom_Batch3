@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nama</title>
+</head>
+<body>
+  <script language="javascript">
+    //array of Object
+    let m1 = {nama:"Budi", nilai:75}
+    let m2 = {nama:"Bedu", nilai:55}
+    let m3 = {nama:"Dedi", nilai:95}
+    let m4 = {nama:"Dudi", nilai:88}
+    let m5 = {nama:"Deden", nilai:25}
+    
+    let mahasiswa = [m1, m2, m3, m4, m5];
+    
+    for (m of mahasiswa) {
+      let ket = (m.nilai >= 60) ? "Lulus" : "Gagal";
+      document.write(
+          `<br /> Nama : ${m.nama} - Nilai : ${m.nilai} - Keterangan : ${ket}`
+        );
+    }
+  </script>
+</body>
+</html>

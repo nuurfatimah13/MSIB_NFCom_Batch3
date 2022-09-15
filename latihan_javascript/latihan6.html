@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Tanggal</title>
+</head>
+<body>
+  <form>
+    Tanggal lahir: <br />
+    <select name="tgl">
+        <script language="javascript">
+          let tgl;
+          for (tgl = 1; tgl <= 31; tgl++) {
+            document.write(
+                `<option value="${tgl}">${tgl}</option>`
+              );
+          }
+        </script>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <select name="bln">
+        <script language="javascript">
+          let bulan = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Des'];
+          let x = '';
+          /* for (let bln in bulan) {
+            x = bulan[bln];
+            document.write(
+                `<option value="${bln}">${x}</option>`
+              );
+          } */
+          for (let bln of bulan) {
+            document.write(
+                `<option value="${bln}">${bln}</option>`
+              );
+          }
+        </script>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <select name="thn">
+        <script language="javascript">
+          let thn_now = new Date().getFullYear();
+          let thn_max = thn_now - 35;
+          let thn_min = thn_now - 17;
+          while (thn_min >= thn_max) {
+            document.write(
+                `<option value="${thn_min}">${thn_min}</option>`
+              )
+            thn_min--;
+          }
+        </script>
+    </select>
+    &nbsp;&nbsp;&nbsp;
+    <select name="thn2">
+        <script language="javascript">
+          let thn_now2 = new Date().getFullYear();
+          let thn_max2 = thn_now2 - 35;
+          let thn_min2 = thn_now2 - 17;
+          while (thn_max2 <= thn_min2) {
+            document.write(
+                `<option value="${thn_max2}">${thn_max2}</option>`
+              )
+            thn_max2++;
+          }
+        </script>
+    </select>
+  </form>
+</body>
+</html>
