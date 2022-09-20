@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Gempa</title>
+</head>
+<body>
+  <h3 align="center">INFORMASI GEMPA</h3>
+  <table class="table table-bordered border-primary" align="center" border="1" cellpadding="10" cellspacing="0" width="75%">
+    <thead>
+      <tr bgcolor="tomato">
+        <th>NO</th>
+        <th colspan="2">LOKASI</th>
+        <th>SKALA</th>
+        <th colspan="4">DAMPAK</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script language="javascript">
+        let no = 1;
+        /* ---------- membuat class ---------- */
+        class Gempa {
+          //member konstruktor
+          constructor(lokasi, skala) {
+            this.lokasi = lokasi;
+            this.skala = skala;
+          }
+          //member fungsi define by user
+          dampak() {
+            if (this.skala <= 2) {
+              this.dampakGempa = 'Tidak ada yang dirasakan';
+            } else if (this.skala > 2 && this.skala <= 4) {
+              this.dampakGempa = 'Terdapat bangunan yang mengalami kerusakan dan retak';
+            } else if (this.skala > 4 && this.skala <= 6) {
+              this.dampakGempa = 'Terdapat bangunan yang roboh';
+            } else if (this.skala > 6) {
+              this.dampakGempa = 'Bangunan banyak yang roboh dan berpotensi terjadinya tsunami';
+            } else {
+              this.dampakGempa = '';
+            }
+            return this.dampakGempa;
+          }
+          infoGempa() {
+            document.write(`
+              <tr>
+                <td align="center">${no++}</td>
+                <td colspan="2">${this.lokasi}</td>
+                <td align="center">${this.skala} SR</td>
+                <td colspan="4">${this.dampak()}</td>
+              </tr>
+            `);
+          }
+        }
+        /* ---------- membuat class ---------- */
+        //instance Object
+        g1 = new Gempa('Kepulauan Seribu', 3);
+        g2 = new Gempa('Selat Sunda', 5);
+        g3 = new Gempa('Bandung', 6);
+        g4 = new Gempa('Samudra Pasifik', 8);
+        g5 = new Gempa('Medan', 2);
+        g6 = new Gempa('Maluku', 4);
+        g7 = new Gempa('Palu', 2);
+        g8 = new Gempa('Solo', 3);
+        g9 = new Gempa('Cirebon', 7);
+        g10 = new Gempa('Brebes', 1);
+
+        g1.infoGempa(), g2.infoGempa(), g3.infoGempa(), g4.infoGempa(), g5.infoGempa(), g6.infoGempa(), g7.infoGempa(), g8.infoGempa(), g9.infoGempa(), g10.infoGempa()
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>
