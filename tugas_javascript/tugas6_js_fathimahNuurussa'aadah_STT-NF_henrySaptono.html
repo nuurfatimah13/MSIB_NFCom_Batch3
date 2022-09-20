@@ -4,71 +4,122 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+    .card {
+      margin: 2rem;
+    }
+    .card-header {
+      background-color: #5cf4f8;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    table {
+      border: 1px solid black;
+      width: 100%;
+    }
+    tr, th, td {
+      border: 1px solid black;
+    }
+    th {
+      text-align: center;
+    }
+    /* responsive */
+    @media screen and (max-width: 400px) {
+      .card-header {
+        background-color: #fdc758;
+        font-size: 0.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      .scroll {
+        display: block;
+        width: 100%;
+        overflow: scroll;
+      }
+    }
+    @media screen and (min-width: 401px) and (max-width: 768px) {
+      .card-header {
+        background-color: #f8562e;
+        font-size: 0.5rem;
+        text-align: center;
+      }
+    }
+  </style>
   <title>Informasi Gempa</title>
 </head>
 <body>
-  <h3 align="center">INFORMASI GEMPA</h3>
-  <table class="table table-bordered border-primary" align="center" border="1" cellpadding="10" cellspacing="0" width="75%">
-    <thead>
-      <tr bgcolor="tomato">
-        <th>NO</th>
-        <th colspan="2">LOKASI</th>
-        <th>SKALA</th>
-        <th colspan="4">DAMPAK</th>
-      </tr>
-    </thead>
-    <tbody>
-      <script language="javascript">
-        let no = 1;
-        /* ---------- membuat class ---------- */
-        class Gempa {
-          //member konstruktor
-          constructor(lokasi, skala) {
-            this.lokasi = lokasi;
-            this.skala = skala;
-          }
-          //member fungsi define by user
-          dampak() {
-            if (this.skala <= 2) {
-              this.dampakGempa = 'Tidak ada yang dirasakan';
-            } else if (this.skala > 2 && this.skala <= 4) {
-              this.dampakGempa = 'Terdapat bangunan yang mengalami kerusakan dan retak';
-            } else if (this.skala > 4 && this.skala <= 6) {
-              this.dampakGempa = 'Terdapat bangunan yang roboh';
-            } else if (this.skala > 6) {
-              this.dampakGempa = 'Bangunan banyak yang roboh dan berpotensi terjadinya tsunami';
-            } else {
-              this.dampakGempa = '';
-            }
-            return this.dampakGempa;
-          }
-          infoGempa() {
-            document.write(`
-              <tr>
-                <td align="center">${no++}</td>
-                <td colspan="2">${this.lokasi}</td>
-                <td align="center">${this.skala} SR</td>
-                <td colspan="4">${this.dampak()}</td>
-              </tr>
-            `);
-          }
-        }
-        /* ---------- membuat class ---------- */
-        //instance Object
-        g1 = new Gempa('Kepulauan Seribu', 3);
-        g2 = new Gempa('Selat Sunda', 5);
-        g3 = new Gempa('Bandung', 6);
-        g4 = new Gempa('Samudra Pasifik', 8);
-        g5 = new Gempa('Medan', 2);
-        g6 = new Gempa('Maluku', 4);
-        g7 = new Gempa('Palu', 2);
-        g8 = new Gempa('Solo', 3);
-        g9 = new Gempa('Cirebon', 7);
-        g10 = new Gempa('Brebes', 1);
-
-        g1.infoGempa(), g2.infoGempa(), g3.infoGempa(), g4.infoGempa(), g5.infoGempa(), g6.infoGempa(), g7.infoGempa(), g8.infoGempa(), g9.infoGempa(), g10.infoGempa()
-      </script>
-    </tbody>
-  </table>
+  <div class="card">
+    <div class="card-header">
+      INFORMASI GEMPA
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <table class="scroll" cellpadding="10" cellspacing="0">
+          <thead>
+            <tr bgcolor="tomato">
+              <th>NO</th>
+              <th colspan="2">LOKASI</th>
+              <th>SKALA</th>
+              <th colspan="4">DAMPAK</th>
+            </tr>
+          </thead>
+          <tbody id="data">
+            <script language="javascript">
+              let no = 1;
+              /* ---------- membuat class ---------- */
+              class Gempa {
+                //member konstruktor
+                constructor(lokasi, skala) {
+                  this.lokasi = lokasi;
+                  this.skala = skala;
+                }
+                //member fungsi define by user
+                dampak() {
+                  if (this.skala <= 2) {
+                    this.dampakGempa = 'Tidak ada yang dirasakan';
+                  } else if (this.skala > 2 && this.skala <= 4) {
+                    this.dampakGempa = 'Terdapat bangunan yang mengalami kerusakan dan retak';
+                  } else if (this.skala > 4 && this.skala <= 6) {
+                    this.dampakGempa = 'Terdapat bangunan yang roboh';
+                  } else if (this.skala > 6) {
+                    this.dampakGempa = 'Bangunan banyak yang roboh dan berpotensi terjadinya tsunami';
+                  } else {
+                    this.dampakGempa = '';
+                  }
+                  return this.dampakGempa;
+                }
+                infoGempa() {
+                  document.write(`
+                    <tr>
+                      <td align="center">${no++}</td>
+                      <td colspan="2">${this.lokasi}</td>
+                      <td align="center">${this.skala} SR</td>
+                      <td colspan="4">${this.dampak()}</td>
+                    </tr>
+                  `);
+                }
+              }
+              /* ---------- membuat class ---------- */
+              //instance Object
+              g1 = new Gempa('Kepulauan Seribu', 3);
+              g2 = new Gempa('Selat Sunda', 5);
+              g3 = new Gempa('Bandung', 6);
+              g4 = new Gempa('Samudra Pasifik', 8);
+              g5 = new Gempa('Medan', 2);
+              g6 = new Gempa('Maluku', 4);
+              g7 = new Gempa('Palu', 2);
+              g8 = new Gempa('Solo', 3);
+              g9 = new Gempa('Cirebon', 7);
+              g10 = new Gempa('Brebes', 1);
+      
+              g1.infoGempa(), g2.infoGempa(), g3.infoGempa(), g4.infoGempa(), g5.infoGempa(), g6.infoGempa(), g7.infoGempa(), g8.infoGempa(), g9.infoGempa(), g10.infoGempa()
+            </script>
+          </tbody>
+        </table>
+      </p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
