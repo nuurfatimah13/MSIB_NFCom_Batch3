@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilai Siswa</title>
+</head>
+<body>
+  <script language="javascript">
+    /* ---------- membuat class ---------- */
+    class NilaiSiswa {
+      //member konstruktor
+      constructor(nama, matkul, nilai) {
+        this.nama = nama;
+        this.matkul = matkul;
+        this.nilai = nilai;
+      }
+      //member fungsi define by user
+      getKelulusan() {
+        this.ket = (this.nilai >= 60) ? "Lulus": "Tidak Lulus";
+        return this.ket;
+      }
+      getGrade() {
+        if (this.nilai >= 85 && this.nilai <= 100) {
+          this.grade = 'A';
+        } else if (this.nilai >= 75 && this.nilai <= 85) {
+          this.grade = 'B';
+        } else if (this.nilai >= 60 && this.nilai < 75) {
+          this.grade = 'C';
+        } else if (this.nilai >= 30 && this.nilai < 60) {
+          this.grade = 'D';
+        } else if (this.nilai >= 0 && this.nilai <= 30) {
+          this.grade = 'E';
+        } else {
+          this.grade = '';
+        }
+        return this.grade;
+      }
+      getPredikat() {
+        switch (this.grade) {
+          case 'A': this.predikat = 'Sangat Baik'; break;
+          case 'B': this.predikat = 'Baik'; break;
+          case 'C': this.predikat = 'Cukup'; break;
+          case 'D': this.predikat = 'Kurang'; break;
+          case 'E': this.predikat = 'Sangat Kurang'; break;
+          default: this.predikat = ''; break;
+        }
+        return this.predikat;
+      }
+      dataNilaiMahasiswa() {
+        document.write(`
+          Nama Mahasiswa : ${this.nama}
+          <br /> Mata Kuliah : ${this.matkul}
+          <br /> Nilai : ${this.nilai}
+          <br /> Keterangan : ${this.getKelulusan()}
+          <br /> Grade : ${this.getGrade()}
+          <br /> Predikat : ${this.getPredikat()}
+          <br /><hr />
+          `);
+      }
+    }
+    /* ---------- membuat class ---------- */
+    //instance Object
+    s1 = new NilaiSiswa('Raihan Fadhlurrahman', 'Matematika Dasar', 70);
+    s2 = new NilaiSiswa('Budiansyah Hakim', 'Matematika Dasar', 50);
+    s3 = new NilaiSiswa('Rainandra Nur Hakim', 'Matematika Dasar', 96);
+    s4 = new NilaiSiswa('Andika Faturrahman', 'Matematika Dasar', 84);
+    s5 = new NilaiSiswa('Indra Nur Alifian', 'Matematika Dasar', 20);
+
+    s1.dataNilaiMahasiswa(), s2.dataNilaiMahasiswa(), s3.dataNilaiMahasiswa(), s4.dataNilaiMahasiswa(), s5.dataNilaiMahasiswa()
+  </script>
+</body>
+</html>
