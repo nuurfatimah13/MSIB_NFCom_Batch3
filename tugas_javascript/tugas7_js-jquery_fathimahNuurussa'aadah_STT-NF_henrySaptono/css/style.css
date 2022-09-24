@@ -1,0 +1,43 @@
+.card {
+  margin: 2rem;
+}
+.card-header, .accordion-button {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.card-header {
+  background-color: #5cf4f8;
+}
+.content {
+  background-color: #2aadce;
+  width: 105px;
+  height: 105px;
+}
+/* responsive */
+@media screen and (max-width: 400px) {
+  .card-header {
+    background-color: #fdc758;
+  }
+  .card-header, .accordion-button {
+    font-size: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .row {
+    width: 100%;
+  }
+  /* .scroll {
+    display: block
+    width: 100%;
+    overflow: scroll;
+  } */
+}
+@media screen and (min-width: 401px) and (max-width: 768px) {
+  .card-header {
+    background-color: #f8562e;
+  }
+  .card-header, .accordion-button {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+}
