@@ -1,0 +1,27 @@
+<script src="js/jquery-3.6.1.min.js"></script>
+<script>
+  $(document).ready(function() {
+    //memanggil tag
+    $("input").click(function() {
+      alert("Selamat Belajar Jquery!");
+    });
+    //memanggil id dan class
+    $(".h2").css("background-color", "orange");
+    $("#h3").css("background-color", "azure");
+    //menggunakan effect
+    //$("p").hide("slow");
+    $("p").slideDown(600);
+  });
+</script>
+<h2 class="h2">Welcome To Jquery</h2>
+<h3 id="h3">Semangat Belajar Jquery di NF Computer</h3>
+<p>
+  paragraf 1, aku belajar Jquery, xixixi
+</p>
+<p>
+  paragraf 2, aku belajar Jquery, xixixi
+</p>
+<p>
+  paragraf 3, aku belajar Jquery, xixixi
+</p>
+<input type="submit" name="aksi" value="Salam" />
